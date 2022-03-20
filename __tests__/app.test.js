@@ -1,45 +1,54 @@
 const ToDoApp = require("../src/app.js");
-const allNames = ['Piotr', 'Piotr', 'Blazej'];
+const MockDataStore = require("../mocks/mock.datastore");
 
-describe('App.js', () => {
+const mockData = [
+  {
+    id: 1,
+    task: "Zadanie1",
+    isRealized: 0,
+  },
+  {
+    id: 2,
+    task: "Zadanie2",
+    isRealized: 0,
+  },
+  {
+    id: 3,
+    task: "Zadanie3",
+    isRealized: 0,
+  },
+];
+
+
+
+describe("App.js", () => {
   let App = null;
+  let mockDataStore = null;
 
   beforeEach(() => {
-    App = new ToDoApp(allNames);
+    mockDataStore = new MockDataStore(mockData);
+    App = new ToDoApp(mockDataStore);
   });
 
-  test('Should get all names', () => {
-    const names = App.getNames();
-    expect(names.length).toBe(allNames.length);
+  test("Should get all tasks", async () => {
+    const tasks = await App.getAllTasks();
+    expect(tasks.length).toBe(mockData.length);
   });
 
-  test('Should add given name', () => {
-    App.setName("Blazej");
-    const names = App.getNames();
+  test("Should add given task", async () => {
+    const allTasks = await App.addTask({id: 4, task: "Blazej", isRealized: 0});
+    expect(allTasks.length).toBe(mockData.length + 1)
   });
 
-  test('Should delete all given names', () => {
-    App.deleteName("Piotr");
-    const names = App.getNames();
-
-    expect(names.length).toBe(1);
-    expect(names[0]).not.toBe('Piotr');
+  test("Should delete all given tasks", async () => {
+    const allTasks = await App.deleteTask(1);
+    
+    expect(allTasks.length).toBe(mockData.length - 1); 
+    expect(allTasks[0].id).not.toBe(1);
   });
 
-  test('Should update all names with new value', () => {
-    App.modifyName('Piotr', 'Maciej');
-    const names = App.getNames();
-
-    const piotrs = names.filter((n) => n === 'Piotr');
-    const maciejs = names.filter((n) => n === 'Maciej');
-
-    expect(piotrs.length).toBe(0);
-    expect(maciejs.length).toBe(2);
+  test("Should update task with the new value", async () => {
+    const allTasks =  await App.modifyTask(1, "Maciej");
+    expect(allTasks[0].task).toBe("Maciej");
   });
-
-  test('Should return true if value is found', () => {
-    expect(App.hasName('Piotr')).toBe(true);
-    expect(App.hasName('Maciej')).toBe(false);
-  })
-
 });

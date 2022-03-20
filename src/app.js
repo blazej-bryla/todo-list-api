@@ -1,6 +1,5 @@
 class ToDoApp {
-  constructor(names = [], dataStore) {
-    this.names = [...names];
+  constructor(dataStore) {
     this.dataStore = dataStore;
   }
 
