@@ -106,6 +106,17 @@ Create table
 Create .env file, copy and paste config from .env.example then modify .env variables.
   
 
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+  or
+  npm run test:watch
+```
+
+
     
 ## Tech Stack
 
