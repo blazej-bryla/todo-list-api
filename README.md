@@ -98,7 +98,7 @@ Create table
   | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `int` | **Required**. |
-| `task`      | `varcchar` | **Required**. |
+| `task`      | `varchar` | **Required**. |
 | `isRealized`      | `Boolean/tinyint` | **Required**. |
 
 ### Setup database in Project
