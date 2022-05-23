@@ -1,5 +1,12 @@
 [![CircleCI](https://circleci.com/gh/blazej-bryla/todo-list-api/tree/master.svg?style=svg&circle-token=0491836073fc2cb406301384379f02ff7b9cb68e)](https://circleci.com/gh/blazej-bryla/todo-list-api/tree/master)
 
+
+# Todo-list-API
+
+Simply API for my todo-list app.
+
+
+
 ## API Reference
 
 #### Get all items
@@ -62,4 +69,44 @@
 | :-------- | :------- | :-------------------------------- |
 | `taskId`      | `int` | **Required**. Existing taskId for mark as realized|
 
+
+
+## Project Installation
+
+Install todo-lsit-api with git clone
+
+```bash
+  git clone https://github.com/blazej-bryla/todo-list-api
+  cd todo-list-api
+```
+
+
+## Database Setup
+
+Todo-list-api based on Mysql Database
+
+Create database
+```bash
+  Create simple database for example: "todo",
+```
+
+Create table
+```bash
+  Create table with 3 fields for example: "tasks"
+ ``` 
+  | Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | **Required**. |
+| `task`      | `varcchar` | **Required**. |
+| `isRealized`      | `Boolean/tinyint` | **Required**. |
+
+### Setup database in Project
+
+Create .env file, copy and paste config from .env.example then modify .env variables.
+  
+
+    
+## Tech Stack
+
+**API:** JavaScript, Node, Express, Jest, MySql, CircleCi
 
