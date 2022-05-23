@@ -73,11 +73,12 @@ Simply API for my todo-list app.
 
 ## Project Installation
 
-Install todo-lsit-api with git clone
+Install todo-list-api with git clone
 
 ```bash
   git clone https://github.com/blazej-bryla/todo-list-api
   cd todo-list-api
+  npm install
 ```
 
 
