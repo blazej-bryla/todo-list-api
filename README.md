@@ -11,7 +11,7 @@ Simply API for my todo-list app.
 
 #### Get all items
 
-```http
+```
   GET /tasks
 ```
 
