@@ -11,7 +11,7 @@ Simply API for my todo-list app.
 
 #### Get all items
 
-```
+```http
   GET /tasks
 ```
 
@@ -21,7 +21,7 @@ Simply API for my todo-list app.
 ```http
   POST /task
 ```
-```http
+```
   Example body: {task: "Make dinner"}
 ```
 | Parameter | Type     | Description                       |
@@ -35,7 +35,7 @@ Simply API for my todo-list app.
 ```http
   DELETE /task
 ```
-```http
+```
   Example body: {taskId: 4}
 ```
 
@@ -48,7 +48,7 @@ Simply API for my todo-list app.
 ```http
   patch /task
 ```
-```http
+```
   Example body: {taskId: 4, newTask: "Make lunch"}
 ```
 | Parameter | Type     | Description                       |
@@ -61,7 +61,7 @@ Simply API for my todo-list app.
 ```http
   patch /task
 ```
-```http
+```
   Example body: {taskId: 4}
 ```
 
